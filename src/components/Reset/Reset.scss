@@ -1,0 +1,20 @@
+@import '../../scss/variables';
+
+.reset {
+  margin-bottom: 20px;
+  text-align: right;
+}
+
+.reset__button {
+  display: inline-block;
+  transition: color 0.3s, opacity 0.3s;
+  cursor: pointer;
+  &:hover {
+    color: $color-electric-blue
+  }
+  &.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}

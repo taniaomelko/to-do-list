@@ -1,0 +1,34 @@
+@import '../../scss/variables';
+
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background-color: $color-white;
+  box-shadow: 0 4px 20px rgb($color-black, 0.12);
+  padding: 10px 0;
+}
+
+.header__list {
+  display: flex;
+}
+
+.header__item {
+  &:not(:last-child) {
+    margin-right: 20px;
+  }
+  a {
+    font-size: $font-14;
+    line-height: 1;
+    font-weight: 500;
+    transition: color 0.3s;
+    &:hover {
+      color: $color-electric-blue;
+    }
+    &.active {
+      color: $color-electric-blue;
+    }
+  }
+}

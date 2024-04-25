@@ -1,0 +1,11 @@
+@import '../../scss/variables';
+
+.todos {
+  padding: 40px 0;
+  &.deleted {
+    .todo.deleted {
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+}

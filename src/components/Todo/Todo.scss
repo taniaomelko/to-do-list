@@ -1,0 +1,55 @@
+@import '../../scss/variables';
+
+.todo {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  transition: opacity 0.3s;
+  &.deleted {
+    opacity: 0.3;
+    pointer-events: none;
+  }
+}
+
+.todo__wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  flex-grow: 1;
+  padding: 10px 20px;
+  background-color: $color-white;
+  border-radius: $border-radius;
+  box-shadow: 0 4px 20px rgb($color-black, 0.12);
+  cursor: pointer;
+  &:hover {
+    .todo__title {
+      color: $color-electric-blue;
+    }
+  }
+  &.completed {
+    .todo__icon {
+      color: $color-green;
+    }
+  }
+}
+
+.todo__title {
+  font-size: $font-16;
+  line-height: 1.2;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.todo__icon {
+  flex-shrink: 0;
+  color: $color-red;
+}
+
+.todo__button {
+  transition: color 0.3s;
+  cursor: pointer;
+  &:hover {
+    color: $color-electric-blue;
+  }
+}

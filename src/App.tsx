@@ -1,26 +1,21 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Header } from './components/Header/Header';
+import { Home } from './components/Home/Home';
+import { Todos } from './components/Todos/Todos';
+import { Trash } from './components/Trash/Trash';
+import { EViewMode } from './types/EViewMode';
 
-function App() {
+export const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  <Router>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path={`/${EViewMode.All}`} element={<Todos />} />
+        <Route path={`/${EViewMode.Deleted}`} element={<Trash />} />
+      </Routes>
+    </Router>
+  )
 }
-
-export default App;
