@@ -1,10 +1,15 @@
 import React from 'react';
+import './Home.scss';
 import { Title } from '../Title/Title';
 
 export const Home: React.FC = () => {
   return (
-    <Title>
-      Home
-    </Title>
+    <section className="home">
+      <div className="container">
+        <Title>
+          Home
+        </Title>
+      </div>
+    </section>
   );
 }
