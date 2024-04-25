@@ -8,14 +8,16 @@ import { Trash } from './components/Trash/Trash';
 import { EViewMode } from './types/EViewMode';
 
 export const App: React.FC = () => {
+  const basename = process.env.PUBLIC_URL;
+
   return (
-  <Router>
+    <Router basename={basename}>
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path={`/${EViewMode.All}`} element={<Todos />} />
-        <Route path={`/${EViewMode.Deleted}`} element={<Trash />} />
+        <Route path={EViewMode.All} element={<Todos />} />
+        <Route path={EViewMode.Deleted} element={<Trash />} />
       </Routes>
     </Router>
-  )
+  );
 }
